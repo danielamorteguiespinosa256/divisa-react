@@ -4,6 +4,8 @@ const App = () => {
   const [divisas , setDivisas] = useState([])
   const [seleccion, setSeleccion] = useState('')
   const [divisaDefinitiva, setdivisaDefinitiva] = useState (null)
+  const [valorinput , valorInput] = useState ('hola')
+  const [operacion, setOperacion] = useState ('0')
 
   useEffect(() =>{
     consultar()
@@ -33,6 +35,17 @@ const App = () => {
 
   }
 
+  const calcularConvercion = () => {
+    if (!valorInput || !divisaDefinitiva) return 0
+    return(valorInput  / divisaDefinitiva.ultimoCierre).toFixed(2)
+  }
+
+  const calcularoperacion = () =>{
+    const resultadoConvercion = calcularConvercion()
+    setOperacion(resultadoConvercion)
+
+    
+  }
   return(
     <div className="contenedor">
       <h1>convertir desde COP</h1>
@@ -49,9 +62,9 @@ const App = () => {
           }
       </select>
 
-      <button>convertir</button>
+      <button onClick={operacion}>convertir</button>
       <p id="resultado">
-        {divisaDefinitiva?.ultimoCierre}
+        
       </p>
     </div>
   )

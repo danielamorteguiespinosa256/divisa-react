@@ -39,7 +39,7 @@ input:focus, select:focus {
 }
 
 button {
-    background-color: #007bff;
+    background-color: #00ff40;
     color: white;
     border: none;
     cursor: pointer;
@@ -48,7 +48,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #00b306;
 }
 
 #resultado {
